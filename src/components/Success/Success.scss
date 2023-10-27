@@ -15,6 +15,31 @@
 
     .shopping-cart {
       display: flex;
+
+      .product-image {
+        position: relative;
+        margin: 0 1rem;
+
+        height: 3rem;
+        aspect-ratio: 4/3;
+        background-color: vars.$surface-color-2;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .amount {
+          position: absolute;
+          top: -0.75rem;
+          right: -0.9rem;
+          z-index: 1;
+          width: 1.8rem;
+          height: 1.5rem;
+          background-color: #fff;
+          border-radius: 4px;
+          text-align: center;
+        }
+      }
     }
 
     .feedback {

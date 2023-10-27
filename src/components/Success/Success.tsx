@@ -1,4 +1,5 @@
 import { useShoppingCart } from "../../hooks/useShoppingCart";
+import { products } from "../../products";
 import { Fridge } from "../Fridge";
 import "./Success.scss";
 
@@ -11,15 +12,17 @@ export function Success() {
         <h1>Success</h1>
         <ul className="shopping-cart">
           {Array.from(shoppingCart).map(([id, amount]) => (
-            <li key={id}>asd</li>
+            <li key={id}>
+              <div className="product-image">
+                <span className="amount">{amount}</span>
+              </div>
+            </li>
           ))}
         </ul>
         <p className="feedback">We would love your feedback</p>
         <div>stars</div>
         <p className="collect">Please collect your purchase</p>
-        <div>
-          <Fridge />
-        </div>
+        <Fridge />
       </div>
     </div>
   );
