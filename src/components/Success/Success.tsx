@@ -1,5 +1,5 @@
 import { useShoppingCart } from "../../hooks/useShoppingCart";
-import { products } from "../../products";
+import { Feedback } from "../Feedback";
 import { Fridge } from "../Fridge";
 import "./Success.scss";
 
@@ -20,7 +20,7 @@ export function Success() {
           ))}
         </ul>
         <p className="feedback">We would love your feedback</p>
-        <div>stars</div>
+        <Feedback />
         <p className="collect">Please collect your purchase</p>
         <Fridge />
       </div>
