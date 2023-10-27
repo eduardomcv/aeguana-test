@@ -1,0 +1,8 @@
+@use "../../variables.scss" as vars;
+
+.divider {
+  border: none;
+  height: 1px;
+  width: 100%;
+  background-color: vars.$surface-color-2;
+}
