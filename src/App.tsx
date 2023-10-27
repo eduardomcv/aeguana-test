@@ -8,17 +8,17 @@ import "./App.scss";
 
 function App() {
   return (
-    <ShoppingCartProvider>
-      <Header />
-      <main>
-        <BrowserRouter>
+    <BrowserRouter>
+      <ShoppingCartProvider>
+        <Header />
+        <main>
           <Routes>
             <Route path="/" element={<ProductsList />} />
             <Route path="/checkout" element={<Checkout />} />
           </Routes>
-        </BrowserRouter>
-      </main>
-    </ShoppingCartProvider>
+        </main>
+      </ShoppingCartProvider>
+    </BrowserRouter>
   );
 }
 
