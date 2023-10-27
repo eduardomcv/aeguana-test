@@ -3,21 +3,18 @@ import { Header } from "./components/Header";
 import { ProductsList } from "./components/ProductsList";
 
 import "./App.scss";
-import { Button } from "./components/Button";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
-  function handleCheckoutClick() {
-    console.log("go to checkout");
-  }
-
   return (
     <ShoppingCartProvider>
       <Header />
       <main>
-        <ProductsList />
-        <Button className="checkout-button" onClick={handleCheckoutClick}>
-          Go to checkout
-        </Button>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<ProductsList />} />
+          </Routes>
+        </BrowserRouter>
       </main>
     </ShoppingCartProvider>
   );
