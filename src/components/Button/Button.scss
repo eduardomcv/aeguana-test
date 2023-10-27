@@ -1,0 +1,21 @@
+@use "../../variables.scss" as vars;
+
+button {
+  cursor: pointer;
+  color: vars.$secondary-color;
+  background-color: vars.$primary-color;
+  border-radius: 4px;
+  height: 2rem;
+
+  &.disabled {
+    pointer-events: none;
+    color: vars.$secondary-color;
+    background-color: vars.$surface-color-2;
+  }
+
+  &.secondary {
+    color: vars.$primary-color;
+    background-color: vars.$primary-color;
+    border: 1px solid vars.$primary-color;
+  }
+}
