@@ -1,6 +1,6 @@
 @use "../../variables.scss" as vars;
 
-.container {
+.product-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,55 +9,55 @@
   width: 12rem;
   border-radius: 8px;
   box-shadow: 0px 4px 30px 0px vars.$shadow-color;
-}
 
-.product-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  width: 100%;
-  aspect-ratio: 4/3;
-  background-color: vars.$surface-color-1;
+    width: 100%;
+    aspect-ratio: 4/3;
+    background-color: vars.$surface-color-1;
 
-  &.out-of-stock {
-    color: vars.$secondary-color;
-    background-color: vars.$surface-color-2;
+    &.out-of-stock {
+      color: vars.$secondary-color;
+      background-color: vars.$surface-color-2;
+    }
   }
-}
 
-.product-name {
-  font-weight: 700;
-  font-size: 1.2rem;
-  margin-top: 1rem;
-}
+  .product-name {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
 
-.price-container {
-  margin-top: 1rem;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .price-container {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.add-button {
-  width: 8rem;
-  height: 2rem;
-  font-size: 16px;
-  padding: unset;
-  border-radius: 16px;
-}
+  .add-button {
+    width: 8rem;
+    height: 2rem;
+    font-size: 16px;
+    padding: unset;
+    border-radius: 16px;
+  }
 
-.amount-container {
-  width: 8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .amount-container {
+    width: 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.amount-button {
-  height: 2rem;
-  width: 2rem;
-  padding: unset;
-  font-size: 20px;
+  .amount-button {
+    height: 2rem;
+    width: 2rem;
+    padding: unset;
+    font-size: 20px;
+  }
 }

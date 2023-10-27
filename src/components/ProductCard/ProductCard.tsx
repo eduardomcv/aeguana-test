@@ -29,7 +29,7 @@ export function ProductCard({ product }: ProductCardProps) {
   }
 
   return (
-    <div className="container">
+    <div className="product-card">
       <div
         className={clsx("product-image", {
           "out-of-stock": product.isOutOfStock,
