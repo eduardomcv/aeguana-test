@@ -12,7 +12,7 @@ export function Feedback() {
     }
 
     return (
-      <button onClick={handleFeedbackClick}>
+      <button key={index} onClick={handleFeedbackClick}>
         <Star filled={rating >= index + 1} />
       </button>
     );
