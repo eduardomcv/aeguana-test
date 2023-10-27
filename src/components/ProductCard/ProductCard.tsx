@@ -14,10 +14,17 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const [shoppingCart, updateCart] = useShoppingCart();
 
-  function handleAddClick() {
+  function increment() {
     updateCart({
       productId: product.id,
       type: "increment",
+    });
+  }
+
+  function decrement() {
+    updateCart({
+      productId: product.id,
+      type: "decrement",
     });
   }
 
@@ -37,12 +44,20 @@ export function ProductCard({ product }: ProductCardProps) {
           <Button
             className="add-button"
             disabled={product.isOutOfStock}
-            onClick={handleAddClick}
+            onClick={increment}
           >
             Add
           </Button>
         ) : (
-          <div>adding</div>
+          <div className="amount-container">
+            <Button className="amount-button" onClick={decrement}>
+              -
+            </Button>
+            <span>{shoppingCart.get(product.id)}</span>
+            <Button className="amount-button" onClick={increment}>
+              +
+            </Button>
+          </div>
         )}
       </div>
     </div>

@@ -41,9 +41,23 @@
 }
 
 .add-button {
-  width: 6rem;
+  width: 8rem;
   height: 2rem;
   font-size: 16px;
   padding: unset;
   border-radius: 16px;
+}
+
+.amount-container {
+  width: 8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.amount-button {
+  height: 2rem;
+  width: 2rem;
+  padding: unset;
+  font-size: 20px;
 }
