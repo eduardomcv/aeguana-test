@@ -2,10 +2,14 @@
 
 button {
   cursor: pointer;
+  font-weight: 700;
   color: vars.$secondary-color;
   background-color: vars.$primary-color;
   border-radius: 4px;
-  height: 2rem;
+  height: 3rem;
+  width: 12rem;
+  padding: 1rem;
+  font-size: 16px;
 
   &.disabled {
     pointer-events: none;
