@@ -12,7 +12,7 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const [shoppingCart, updateCart] = useShoppingCart();
+  const { shoppingCart, updateCart } = useShoppingCart();
 
   function increment() {
     updateCart({
