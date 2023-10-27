@@ -1,0 +1,28 @@
+@use "../../variables.scss" as vars;
+
+.order-container {
+  padding: 1rem 4rem 1rem 2rem;
+  width: calc(100% - 6rem);
+  height: 50rem;
+  border-radius: 12px;
+  background-color: vars.$surface-color-1;
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-indent: 1rem;
+  }
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: vars.$surface-color-2;
+  }
+}
+
+.navigation-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
