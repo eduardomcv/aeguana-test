@@ -1,12 +1,15 @@
-import "./App.scss";
 import { Header } from "./components/Header";
+import { ProductsList } from "./components/ProductsList";
+import "./App.scss";
 
 function App() {
   return (
-    <div className="container">
+    <>
       <Header />
-      <main></main>
-    </div>
+      <main>
+        <ProductsList />
+      </main>
+    </>
   );
 }
 
