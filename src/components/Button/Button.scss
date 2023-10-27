@@ -1,6 +1,6 @@
 @use "../../variables.scss" as vars;
 
-button {
+.button {
   cursor: pointer;
   font-weight: 700;
   color: vars.$secondary-color;
@@ -19,7 +19,7 @@ button {
 
   &.secondary {
     color: vars.$primary-color;
-    background-color: vars.$primary-color;
+    background-color: vars.$secondary-color;
     border: 1px solid vars.$primary-color;
   }
 }

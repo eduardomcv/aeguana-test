@@ -20,6 +20,7 @@ export function Button({
   return (
     <button
       className={clsx(
+        "button",
         {
           secondary: color === "secondary",
           disabled,
