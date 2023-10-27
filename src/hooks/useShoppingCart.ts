@@ -3,5 +3,5 @@ import { ShoppingCartContext } from "../ShoppingCart";
 
 export function useShoppingCart() {
   const { shoppingCart, updateCart } = useContext(ShoppingCartContext);
-  return [shoppingCart, updateCart];
+  return [shoppingCart, updateCart] as const;
 }

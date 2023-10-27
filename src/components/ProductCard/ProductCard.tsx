@@ -1,6 +1,6 @@
-import { useState } from "react";
 import clsx from "clsx";
 
+import { useShoppingCart } from "../../hooks/useShoppingCart";
 import { Product } from "../../products";
 import { formatCurrency } from "../../utils";
 import { Button } from "../Button";
@@ -12,10 +12,13 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  const [isAdding, setIsAdding] = useState(false);
+  const [shoppingCart, updateCart] = useShoppingCart();
 
   function handleAddClick() {
-    setIsAdding(true);
+    updateCart({
+      productId: product.id,
+      type: "increment",
+    });
   }
 
   return (
@@ -30,7 +33,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <span className="product-name">{product.name}</span>
       <div className="price-container">
         <span>{formatCurrency(product.price)}</span>
-        {!isAdding ? (
+        {!shoppingCart.has(product.id) ? (
           <Button
             className="add-button"
             disabled={product.isOutOfStock}

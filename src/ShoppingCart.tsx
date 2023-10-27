@@ -30,7 +30,7 @@ function reducer(cart: ShoppingCart, action: UpdateCartAction) {
       productAmount += 1;
 
       cart.set(productId, productAmount);
-      return cart;
+      break;
     }
     case "decrement": {
       let productAmount = cart.get(productId) ?? 0;
@@ -41,12 +41,13 @@ function reducer(cart: ShoppingCart, action: UpdateCartAction) {
       } else {
         cart.set(productId, productAmount);
       }
-
-      return cart;
+      break;
     }
     default:
       throw new Error("Unknown action.");
   }
+
+  return new Map(cart);
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
