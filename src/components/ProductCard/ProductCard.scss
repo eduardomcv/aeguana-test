@@ -1,3 +1,5 @@
+@use "../../variables.scss" as vars;
+
 .container {
   display: flex;
   flex-direction: column;
@@ -6,7 +8,7 @@
   height: 16rem;
   width: 12rem;
   border-radius: 8px;
-  box-shadow: 0px 4px 30px 0px rgba(108, 104, 104, 0.2);
+  box-shadow: 0px 4px 30px 0px vars.$shadow-color;
 }
 
 .product-image {
@@ -16,11 +18,11 @@
 
   width: 100%;
   aspect-ratio: 4/3;
-  background-color: #f3f2f0;
+  background-color: vars.$surface-color-1;
 
   &.out-of-stock {
-    color: #fff;
-    background-color: rgba(35, 31, 32, 0.35);
+    color: vars.$secondary-color;
+    background-color: vars.$surface-color-2;
   }
 }
 
@@ -35,4 +37,10 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.add-button {
+  width: 6rem;
+  border-radius: 16px;
 }
