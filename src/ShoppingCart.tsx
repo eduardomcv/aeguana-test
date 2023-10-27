@@ -26,28 +26,28 @@ function reducer(cart: ShoppingCart, action: UpdateCartAction) {
 
   switch (type) {
     case "increment": {
-      let productAmount = cart.get(productId) ?? 0;
-      productAmount += 1;
+      const productAmount = cart.get(productId) ?? 0;
+      const newCart = new Map(cart);
 
-      cart.set(productId, productAmount);
-      break;
+      return newCart.set(productId, productAmount + 1);
     }
     case "decrement": {
       let productAmount = cart.get(productId) ?? 0;
       productAmount -= 1;
 
+      const newCart = new Map(cart);
+
       if (productAmount <= 0) {
-        cart.delete(productId);
+        newCart.delete(productId);
       } else {
-        cart.set(productId, productAmount);
+        newCart.set(productId, productAmount);
       }
-      break;
+
+      return newCart;
     }
     default:
       throw new Error("Unknown action.");
   }
-
-  return new Map(cart);
 }
 
 export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
