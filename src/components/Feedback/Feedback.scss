@@ -1,0 +1,8 @@
+.feedback-container {
+  height: 5rem;
+
+  & svg {
+    height: 4rem;
+    width: 4rem;
+  }
+}
