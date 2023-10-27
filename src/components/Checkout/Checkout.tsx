@@ -1,11 +1,13 @@
+import { Fragment } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../Button";
 
-import "./Checkout.scss";
 import { useShoppingCart } from "../../hooks/useShoppingCart";
 import { Divider } from "../Divider";
 import { products } from "../../products";
 import { formatCurrency } from "../../utils";
+
+import "./Checkout.scss";
 
 const DISCOUNTED_AMOUNT = 0.5;
 
@@ -30,7 +32,7 @@ export function Checkout() {
   }
 
   return (
-    <>
+    <div className="checkout-container">
       <div className="order-container">
         <h1>Order summary</h1>
         <Divider />
@@ -39,7 +41,7 @@ export function Checkout() {
             const product = products.find((product) => product.id === id)!;
 
             return (
-              <>
+              <Fragment key={id}>
                 <li className="cart-item">
                   <div className="product">
                     <div className="product-image" />
@@ -49,7 +51,7 @@ export function Checkout() {
                   <span>{formatCurrency(amount * product.price)}</span>
                 </li>
                 <Divider />
-              </>
+              </Fragment>
             );
           })}
         </ul>
@@ -68,6 +70,6 @@ export function Checkout() {
         </Button>
         <Button onClick={handlePayClick}>Pay & collect</Button>
       </div>
-    </>
+    </div>
   );
 }
